@@ -1,9 +1,10 @@
 name: Deploy to AWS Lambda
 
 on:
+  workflow_dispatch:
   pull_request:
-    branches:
-      - main
+    branches: [main]
+    types: [closed]
 
 env:
   ECR_REPOSITORY: pog-scraper
