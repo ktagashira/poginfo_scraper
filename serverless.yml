@@ -1,12 +1,16 @@
+service: pog-scraper
+
 provider:
   name: aws
-  region: ap-northeast-1
+  region: ${env:AWS_REGION}
   ecr:
     images:
       pog-scraper:
         path: ./
+        platform: linux/amd64
 functions:
   POGScraperTest:
+    memorySize: 2048
     image:
       name: pog-scraper
     command:
