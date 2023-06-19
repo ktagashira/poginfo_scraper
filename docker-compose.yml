@@ -7,3 +7,4 @@ services:
     platform: linux/amd64
     ports:
       - "127.0.0.1:9000:8080"
+    command: "app.handler"

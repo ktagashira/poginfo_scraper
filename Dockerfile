@@ -23,5 +23,3 @@ RUN curl -sSL https://install.python-poetry.org | python3 - \
     && source ~/.bashrc \
     && poetry config virtualenvs.create false \ 
     && poetry install --no-root --no-dev
-
-CMD [ "app.handler" ]

@@ -1,0 +1,14 @@
+provider:
+  region: ap-northeast-1
+  ecr:
+    images:
+      pog-scraper:
+        path: ./
+functions:
+  POGScraperTest:
+    image:
+      name: pog-scraper
+    command:
+      - app.handler
+    name: pog-scraper-test
+    description: テスト用
