@@ -13,7 +13,7 @@ functions:
     memorySize: 2048
     image:
       name: pog-scraper
-    command:
-      - app.handler
+      command:
+        - app.handler
     name: pog-scraper-test
     description: テスト用
