@@ -15,5 +15,5 @@ functions:
       name: pog-scraper
       command:
         - app.handler
-    name: pog-scraper-test
+    name: pog-scraper-serverless-test
     description: テスト用
