@@ -1,1 +1,2 @@
 # poginfo_scraper
+身内でやってるPOGの情報を毎週集計してDiscordに出力するスクリプト
