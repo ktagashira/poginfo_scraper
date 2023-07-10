@@ -1,0 +1,19 @@
+service: pog-scraper
+
+provider:
+  name: aws
+  region: ${env:AWS_REGION}
+  ecr:
+    images:
+      pog-scraper:
+        path: ./
+        platform: linux/amd64
+functions:
+  POGScraperTest:
+    memorySize: 2048
+    image:
+      name: pog-scraper
+      command:
+        - app.handler
+    name: pog-scraper-serverless-test
+    description: テスト用
