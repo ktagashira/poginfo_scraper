@@ -16,10 +16,10 @@ functions:
       name: pog-scraper
       command:
         - app.info_handler
-      environment:
-        GROUP_NAME: ${env:POG_GROUP_NAME}
-        USER_ID: ${env:POG_USER_ID}
-        PASSWORD: ${env:POG_PASSWORD}
+    environment:
+      GROUP_NAME: ${env:POG_GROUP_NAME}
+      USER_ID: ${env:POG_USER_ID}
+      PASSWORD: ${env:POG_PASSWORD}
 
     name: pog-scraper-serverless
     description: serverless frameworkを使ってデプロイしたLambda
