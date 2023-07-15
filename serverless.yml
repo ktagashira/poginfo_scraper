@@ -9,11 +9,17 @@ provider:
         path: ./
         platform: linux/amd64
 functions:
-  POGScraperTest:
+  POGScraper:
     memorySize: 2048
+    timeout: 60
     image:
       name: pog-scraper
       command:
-        - app.handler
-    name: pog-scraper-serverless-test
-    description: テスト用
+        - app.info_handler
+      environment:
+        GROUP_NAME: ${env:GROUP_NAME}
+        USER_ID: ${env:USER_ID}
+        PASSWORD: ${env:PASSWORD}
+
+    name: pog-scraper-serverless
+    description: serverless frameworkを使ってデプロイしたLambda

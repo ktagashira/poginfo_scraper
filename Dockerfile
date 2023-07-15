@@ -14,7 +14,8 @@ RUN yum install atk cups-libs gtk3 libXcomposite alsa-lib \
 COPY --from=build /opt/chrome-linux /opt/chrome
 COPY --from=build /opt/chromedriver /opt/
 
-COPY src/app.py ${LAMBDA_TASK_ROOT}
+COPY ./src ${LAMBDA_TASK_ROOT}
+COPY ./app.py ${LAMBDA_TASK_ROOT}
 COPY ./pyproject.toml ${LAMBDA_TASK_ROOT}
 COPY ./poetry.lock ${LAMBDA_TASK_ROOT}
 
