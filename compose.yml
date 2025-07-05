@@ -1,12 +1,16 @@
-version: "2"
-
 services:
   pog-scraper:
     build: .
     tty: true
     platform: linux/amd64
-    ports:
-      - "127.0.0.1:9000:8080"
-    command: "app.info_handler"
+    image: asia-northeast1-docker.pkg.dev/poginfo/pog-info-scraper/pog-scraper:latest
+    working_dir: /app
+    command: [
+      "uv",
+      "run",
+      "python",
+      "-m",
+      "app.presentation.debug.info_main"
+    ]
     env_file:
       - .env
