@@ -95,12 +95,12 @@ class PogInfoScraper:
             self.login()
             
             logger.info("Clicking race information menu...")
-            menu_elements = self.driver.find_elements(By.CSS_SELECTOR, value=".col-4")
+            menu_elements = self.driver.find_elements(By.PARTIAL_LINK_TEXT, "出走予定")
             logger.info(f"Found {len(menu_elements)} menu elements")
             
             # Wait for menu element to be clickable and click it
-            self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".col-4")))
-            menu_elements[1].click()
+            self.wait.until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, "出走予定")))
+            menu_elements[0].click()
             logger.info("Race information menu clicked")
 
             logger.info("Searching for race information table...")
@@ -127,11 +127,11 @@ class PogInfoScraper:
             self.login()
             
             logger.info("Clicking race result menu...")
-            menu_elements = self.driver.find_elements(By.CSS_SELECTOR, value=".col-4")
+            menu_elements = self.driver.find_elements(By.PARTIAL_LINK_TEXT, "集計結果")
             logger.info(f"Found {len(menu_elements)} menu elements")
             
             # Wait for menu element to be clickable and click it
-            self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".col-4")))
+            self.wait.until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, "集計結果")))
             menu_elements[0].click()
             logger.info("Race result menu clicked")
 
